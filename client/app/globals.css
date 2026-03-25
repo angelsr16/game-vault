@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Fondos ─────────────────────────────── */
+  --color-void: #0a0a0a;
+  --color-base: #111111;
+  --color-surface: #1a1a1a;
+  --color-elevated: #242424;
+  --border-subtle: #2a2a2a;
+  --border-strong: #3d3d3d;
+
+  /* ── Texto ──────────────────────────────── */
+  --color-text-primary: #f0f0f0;
+  --color-text-secondary: #a0a0a0;
+  --color-text-muted: #6b6b6b;
+  --color-text-disabled: #3d4558;
+
+  /* ── Acentos principales ────────────────── */
+  --color-plasma: #6c63ff;
+  --color-matrix: #00d4aa;
+  --color-danger: #ff6b6b;
+  --color-amber: #ffb347;
+  --color-ice: #4fc3f7;
+
+  --color-dim: #1e3a5f;
+  --color-blue-accent: #5ba4f5;
+  --color-blue-active: #3b82f6;
+
+  /* ── Rampas Plasma ──────────────────────── */
+  --color-plasma-900: #1a1830;
+  --color-plasma-700: #2e2a5c;
+  --color-plasma-500: #4b44c0;
+  --color-plasma-400: #6c63ff;
+  --color-plasma-300: #9b95ff;
+  --color-plasma-100: #c8c5ff;
+
+  /* ── Rampas Matrix ──────────────────────── */
+  --color-matrix-900: #001a16;
+  --color-matrix-700: #00392e;
+  --color-matrix-500: #007a60;
+  --color-matrix-400: #00d4aa;
+  --color-matrix-300: #4decca;
+  --color-matrix-100: #a8f5e5;
+
+  /* ── Rampas Danger ──────────────────────── */
+  --color-danger-900: #1f0f0f;
+  --color-danger-700: #4a1a1a;
+  --color-danger-500: #9b3030;
+  --color-danger-400: #ff6b6b;
+  --color-danger-300: #ff9f9f;
+  --color-danger-100: #ffd4d4;
+
+  /* ── Rampas Amber ───────────────────────── */
+  --color-amber-900: #1a1000;
+  --color-amber-700: #3d2800;
+  --color-amber-500: #8c5800;
+  --color-amber-400: #ffb347;
+  --color-amber-300: #ffcc80;
+  --color-amber-100: #ffe8b8;
+
+  /* ── Rampas Ice ─────────────────────────── */
+  --color-ice-900: #001520;
+  --color-ice-700: #003050;
+  --color-ice-500: #0070a8;
+  --color-ice-400: #4fc3f7;
+  --color-ice-300: #8ed8f8;
+  --color-ice-100: #c6ecfc;
+
+  /* ── Tipografía ─────────────────────────── */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* ── Radios ─────────────────────────────── */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-void);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  textarea {
+    @apply w-full text-sm text-[#F0F0F0]
+    rounded-xl px-4 py-3
+
+    bg-white/5 backdrop-blur-md
+    border border-white/10
+
+    placeholder:text-[#6B6B6B]
+
+    shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]
+
+    transition-all duration-300
+
+    focus:outline-none
+    focus:border-[#5BA4F5]/60
+    focus:bg-white/10
+    focus:shadow-[0_0_0_1px_rgba(91,164,245,0.4),0_0_20px_rgba(91,164,245,0.25)];
+  }
+
+  ::selection {
+    background: var(--color-plasma-700);
+    color: var(--color-plasma-100);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-base);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-elevated);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-overlay);
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px var(--color-surface) inset !important;
+    -webkit-text-fill-color: #f0f0f0 !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
